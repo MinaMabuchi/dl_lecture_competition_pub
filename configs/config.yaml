@@ -1,5 +1,5 @@
 batch_size: 128
-epochs: 80
+epochs: 20
 lr: 0.001
 
 device: cuda:0
@@ -8,6 +8,11 @@ seed: 1234
 use_wandb: False
 
 data_dir: data
+image_dir: data
+clip_model_path: data/model_clip.pt/
+clip_pretrained_model_path: data/clip2_1/
+clip_checkpoint_dir: data/clip2_1/
+clip_model_dir: data/clip2_1/
 
 # Evaluation
 model_path: 
