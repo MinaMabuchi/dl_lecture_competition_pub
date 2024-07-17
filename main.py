@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 from src.datasets import ThingsMEGDataset
 from src.models import TransformerBrainToCLIP, train_epoch, validate, save_checkpoint_clip, load_checkpoint_clip
-from src.models import ClassificationModel, 
+from src.models import ClassificationModel, save_checkpoint, load_checkpoint
 from src.utils import set_seed
 
 
