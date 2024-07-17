@@ -9,10 +9,11 @@ use_wandb: False
 
 data_dir: data
 image_dir: data
-clip_model_path: data/model_clip.pt/
-clip_pretrained_model_path: data/clip2_1/
-clip_checkpoint_dir: data/clip2_1/
-clip_model_dir: data/clip2_1/
+clip_checkpoint_dir: data
+clip_model_dir: data
+checkpoint_dir: data
+model_dir: data
+brain_to_clip_path: data/brain_to_clip_checkpoint_epoch_5.pt
 
 # Evaluation
 model_path: 
