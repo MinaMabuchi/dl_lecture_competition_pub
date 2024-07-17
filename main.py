@@ -91,8 +91,30 @@ def run(args: DictConfig):
     # -----------------------------
     #     Calssification Model
     # -----------------------------
-    # model, loss, optimizer
     device = torch.device(args.device)
+
+    # BrainToCLIPmodel load
+    brain_to_clip = TransformerBrainToCLIP(
+        input_dim=train_set.num_channels,
+        seq_len=train_set.seq_len,
+        num_layers=4,
+        nhead=8,
+        dim_feedforward=512,
+        output_dim=512
+    ).to(device)
+    # checkpoint load
+    checkpoint = torch.load(args.brain_to_clip_path)
+    # only dict load
+    brain_to_clip.load_state_dict(checkpoint['model_state_dict'])
+    brain_to_clip.eval()  # evaluation mode
+
+    # freezing params
+    for param in brain_to_clip.parameters():
+        param.requires_grad = False
+
+    
+    
+    # model, loss, optimizer
     classification_model = ClassificationModel(
         num_classes=train_set.num_classes,
         seq_len=train_set.seq_len,
