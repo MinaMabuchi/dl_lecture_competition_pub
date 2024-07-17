@@ -13,7 +13,7 @@ clip_checkpoint_dir: data
 clip_model_dir: data
 checkpoint_dir: data
 model_dir: data
-brain_to_clip_path: data/brain_to_clip_checkpoint_epoch_20.pt
+brain_to_clip_path: data/best_brain_to_clip_model.pt
 
 # Evaluation
 model_path: 
